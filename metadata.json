@@ -1,0 +1,6 @@
+{
+  "name": "Spend Unlimited Rupees",
+  "description": "Start with \u20b9100 Crore and spend it all on luxury items.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
