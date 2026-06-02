@@ -19,6 +19,18 @@ const formatINR = (amount: number) => {
   }).format(amount);
 };
 
+const AdUnitPlaceholder = ({ position }: { position: 'Top' | 'Bottom' }) => (
+  <div className="w-full max-w-7xl mx-auto px-4 py-4 sm:py-6">
+    <div className="w-full mx-auto min-h-[90px] bg-slate-900/40 border border-slate-800/80 rounded-xl flex flex-col items-center justify-center relative overflow-hidden backdrop-blur-sm group border-dashed">
+      <span className="text-[10px] uppercase tracking-widest font-mono text-slate-500 absolute top-2 left-3 opacity-50">Advertisement</span>
+      <div className="py-4 text-center">
+        <p className="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors">AdMob / AdSense Space ({position})</p>
+        <p className="text-xs text-slate-500 mt-1">Insert your responsive ad script here</p>
+      </div>
+    </div>
+  </div>
+);
+
 export default function App() {
   const [balance, setBalance] = useState<number>(INITIAL_BALANCE);
   const [inventory, setInventory] = useState<Inventory>({});
@@ -136,6 +148,9 @@ export default function App() {
           </div>
         </div>
       </header>
+
+      {/* Top Ad Unit Placeholder */}
+      <AdUnitPlaceholder position="Top" />
 
       {/* Main Layout */}
       <main className="flex-1 max-w-7xl mx-auto w-full px-4 py-8 flex flex-col lg:flex-row gap-8">
@@ -315,6 +330,9 @@ export default function App() {
         </aside>
 
       </main>
+
+      {/* Bottom Ad Unit Placeholder */}
+      <AdUnitPlaceholder position="Bottom" />
 
       {/* Footer */}
       <footer className="mt-auto border-t border-white/5 bg-slate-950/80 backdrop-blur-md py-6 text-center text-slate-500 text-sm font-medium">
